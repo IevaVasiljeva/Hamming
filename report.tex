@@ -1,0 +1,31 @@
+\documentclass{report}
+\usepackage{graphicx}
+
+\newcommand{\tab}{\hspace*{3em}}
+
+\begin{document}
+
+\title{Hamming Codes and Burst Errors}
+
+\date{\parbox{\linewidth}{\centering%
+\textsc{Student ID: 120017875}\endgraf
+\textsc{Module: CS3302 Data Encoding}\endgraf
+\textsc{Module Coordinator: Mark-Jan Nederhof}\endgraf
+\today}}
+\maketitle
+
+\section*{Notes}
+\tab Achieves the theoretical limit for minimum number of check bits to do 1-bit error-correction. Check bits cover those bits that make their number up (3rd - 1 and 2, 5th - 1 and 4...), record their parity. If a data bit is bad, multiple check-bits will be ruined too.  (from http://www.computing.dcu.ie/~humphrys/Notes/Networks/data.hamming.html)
+
+\par Like other error-correction code, Hamming code makes use of the concept of parity and parity bit s, which are bits that are added to data so that the validity of the data can be checked when it is read or after it has been received in a data transmission. Using more than one parity bit, an error-correction code can not only identify a single bit error in the data unit, but also its location in the data unit.
+
+\par In data transmission, the ability of a receiving station to correct errors in the received data is called forward error correction (FEC) and can increase throughput on a data link when there is a lot of noise present. To enable this, a transmitting station must add extra data (called error correction bits ) to the transmission. However, the correction may not always represent a cost saving over that of simply resending the information. Hamming codes make FEC less expensive to implement through the use of a block parity mechanism.
+
+(from http://whatis.techtarget.com/definition/Hamming-code)
+
+The redundancy allows the receiver to detect a limited number of errors that may occur anywhere in the message, and often to correct these errors without retransmission. FEC gives the receiver the ability to correct errors without needing a reverse channel to request retransmission of data, but at the cost of a fixed, higher forward channel bandwidth.
+
+from wiki (https://en.wikipedia.org/wiki/Forward_error_correction)
+
+
+\end{document}
